@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Joe's Hotdogs</title>
+    <style type="text/css">
+        h1{
+            text-align: center;
+            font-size: x-large;
+            color: crimson;
+            font-family: fantasy;
+        }
+        table{
+            width: 100%;
+        }
+
+        td, th {
+  border: 1px solid #999;
+  padding: 0.5rem;
+  text-align: center;
+}
+    </style>
+    </head>
+
+    <body>
+        <h1>
+            Hi! Welcome to Joe's Hotdogs. Here is your Order
+        </h1>
+        <script language="javascript">
+
+            var Hotdogs; // num Hot
+            var Fries; // num Fries
+            var Sodas; // num Sodas
+
+            Hotdogs = prompt("How many hotdogs do you want","0"); 
+            Fries = prompt("How many Fries do you want","0"); 
+            Sodas = prompt("How many Sodas do you want","0");
+
+            var H_total = parseFloat(Hotdogs) * 3.75;
+            var F_total = parseFloat(Fries) * 2.00;
+            var S_total = parseFloat(Sodas) * 1.80
+
+            var subTotal = H_total + F_total + S_total;
+            var discount = 0;
+            if(subTotal > 20)
+            {
+                discount = 0.1 * subTotal;
+            }
+
+            subTotal = 0.9 * subTotal;
+
+            var tax = subTotal * 0.0625;
+            var total = subTotal + tax;
+            tax = tax.toFixed(2);
+            discount = discount.toFixed(2);
+            subTotal = subTotal.toFixed(2);
+            total = total.toFixed(2);
+            document.write("<table>" + "\n" +
+                             "<tr>" + "\n" + 
+                                "<th> Item </th>" + "\n" +
+                                "<th> Amount </th>" + "\n" +
+                             "</tr>" +
+                             "<tr>" +
+                                  "<td> Hotdogs </td>" + "\n" +
+                                  "<td>" + Hotdogs + "</td>" + "\n" +
+                             "</tr>" + "\n" +
+                             "<tr>" + "\n" +
+                                  "<td> Fries </td>" + "\n" +
+                                  "<td>" + Fries + "</td>" + "\n" +
+                             "</tr>" + "\n" +
+                             "<tr>" + "\n" +
+                                  "<td> Sodas </td>" + "\n" + 
+                                  "<td>" + Sodas + "</td>" + "\n" +
+                             "</tr>" + "\n" +
+                             "<tr>" + "\n" +
+                                  "<td> subTotal </td>" + "\n" +
+                                  "<td> $" +  subTotal + "</td>" + "\n" +
+                             "</tr>" + "\n" +
+                             "<tr>" + "\n" +
+                                  "<td> Discount </td>" + "\n" +
+                                  "<td> $" + discount + "</td>" + "\n" +
+                             "</tr>" + "\n" +
+                             "<tr>" + "\n" +
+                                  "<td> tax </td>" + "\n" +
+                                  "<td> $" + tax + "</td>" + "\n" +
+                             "</tr>" + "\n" +
+                             "<tr>" + "\n" +
+                                  "<td> final total </td>" + "\n" +
+                                  "<td> $" + total + "</td>" + "\n" +
+                             "</tr>" + "\n" +
+                            "</table>")
+        </script>
+    </body>
+</html>
